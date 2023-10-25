@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="card custom-card">
+      <div class="card-body">
+        <table class="table table-bordered custom-table">
+          <thead class="custom-table-header">
+            <tr>
+              <th>User Name</th>
+              <th>User Roles</th>
+              <th>Actions</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let user of users; let i = index">
+            <tr [ngClass]="i % 2 === 0 ? 'custom-table-row-even' : 'custom-table-row-odd'">
+              <td>{{ user.username }}</td>
+              <td>
+                <span *ngFor="let role of user.roles">
+                  <td>{{ role.role }}</td>
+                </span>
+              </td>
+              <td>
+                <button class="btn btn-success" [routerLink]="['/add-role-for-user', user.user_id]">Update Roles</button>
+              </td>
+              <td>
+                <button class="btn btn-danger" (click)="deleteUser(user.user_id)">Delete User</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

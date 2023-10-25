@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <form>
+    <div class="form-group">
+      <label for="username" class="font-weight-bold text-primary">Username</label>
+      <input type="text" [(ngModel)]="User.username" name="id" class="form-control" id="username">
+    </div>
+
+    <div class="form-group">
+      <label for="currentRole" class="font-weight-bold text-success">Role</label>
+      <ul class="list-group">
+        <li *ngFor="let r of User.roles" class="list-group-item d-flex justify-content-between align-items-center bg-light">
+          <span>{{ r.role }}</span>
+          <button class="btn btn-danger" (click)="removeRoleFromUsers(r.role_id)">Supprimer</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-group">
+      <label for="roleSelect" class="font-weight-bold text-info">Selectionner un role</label>
+      <select [(ngModel)]="idOfRole" name="roleSelectt" class="form-control">
+        <ng-container *ngFor="let rr of roles">
+          <option *ngIf="!isRoleInUser(rr.role_id)" [ngValue]="rr">{{ rr.role }}</option>
+        </ng-container>
+      </select>
+    </div>
+
+    <button class="btn btn-primary" (click)="addRoleToUser()">Ajouter un role</button>
+  </form>
+</div>
