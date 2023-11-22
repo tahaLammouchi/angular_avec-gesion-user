@@ -166,4 +166,8 @@ saveToken(jwt:string){
           const url = `${this.apiURL + '/findUserById'}/${id}`;
           return this.http.get<User>(url,{headers:httpHeaders});
           }
+
+          Register(u:User):Observable<User>{
+            return this.http.post<User>(this.apiURL+'/add', u );
+          }
 }

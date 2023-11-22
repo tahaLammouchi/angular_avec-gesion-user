@@ -14,9 +14,12 @@ constructor(private authService : AuthService) {}
 intercept(request: HttpRequest<unknown>, next: HttpHandler): 
 Observable<HttpEvent<unknown>> {
 const toExclude = "/login";
+const toExclude2 = "/add"; 
+
+const toExclude3 = "/register";
 //tester s'il sagit de login, on n'ajoute pas le header Authorization 
 //puisqu'on a pas encode de JWT (il est null)
-if(request.url.search(toExclude) === -1){
+if(request.url.search(toExclude) === -1 && request.url.search(toExclude2) === -1 && request.url.search(toExclude3) === -1){
 let jwt = this.authService.getToken();
 let reqWithToken = request.clone( {
   setHeaders: { Authorization : "Bearer "+jwt}

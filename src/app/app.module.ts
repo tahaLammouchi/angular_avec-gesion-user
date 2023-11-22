@@ -18,6 +18,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './services/token.interceptor';
 import { ListeOfusersComponent } from './liste-ofusers/liste-ofusers.component';
 import { AddRoleForUserComponent } from './add-role-for-user/add-role-for-user.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AddRoleForUserComponent } from './add-role-for-user/add-role-for-user.c
     ListeGenresComponent,
     UpdateGenreComponent,
     ListeOfusersComponent,
-    AddRoleForUserComponent
+    AddRoleForUserComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

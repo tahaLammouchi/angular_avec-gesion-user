@@ -1,0 +1,27 @@
+<div class="row justify-content-md-center">
+  <div class="col-md-4">
+        <h2 class="text-center">Sign up</h2>
+        <form #registerForm="ngForm">
+          <div class="form-group">
+            <i class="fa fa-user"></i>
+            <input type="text" name="username" class="form-control" placeholder="Username" [(ngModel)]="User.username" required>
+          </div>
+          <div class="form-group icon-input">
+            <i class="fa fa-envelope"></i>
+            <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="User.email" required>
+          </div>
+          <div class="form-group">
+            <i class="fa fa-lock"></i>
+            <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="User.password" required>
+          </div>
+          <div class="form-group">
+            <i class="fa fa-check"></i>
+            <input type="password" name="confirmPassword" class="form-control" placeholder="Confirm Password"  [(ngModel)]="passConf" required>
+          </div>
+          <div class="text-center">
+            <button type="button" (click)="register()" class="btn " style="background-color: rgb(46, 149, 35); color: white;" [disabled]="!registerForm.valid">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  

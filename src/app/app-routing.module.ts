@@ -1,3 +1,4 @@
+import { RegisterComponent } from './register/register.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { VideogamesComponent } from './videogames/videogames.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: "", redirectTo: "videogames", pathMatch: "full" },
   {path: "updateVideogame/:id", component: UpdateVideogameComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
   {path: 'app-forbidden', component: ForbiddenComponent},
   {path : "add-videogame", component : AddVideogameComponent, canActivate:[VideogameGuard]},
   {path : "rechercheParGenre",component : RechercheParGenreComponent},
